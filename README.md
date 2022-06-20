@@ -21,7 +21,7 @@ docker exec -it app2 php bin/console app:send
 
 In APP1 you can consume those messages and turn them back into PHP objects.
 ```shell
-docker exec -it app1 php bin/console messanger:consume -vv external_messages
+docker exec -it app1 php bin/console messenger:consume -vv external_messages
 ```
 
 As an output you should see Messages issued by APP2.
