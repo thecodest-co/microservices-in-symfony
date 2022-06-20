@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app1:
+    container_name: app1
+    build: app1/.
+    restart: on-failure
+    env_file: app1/.env
+    environment:
+      APP_NAME: app1
+    tty: true
+    stdin_open: true
+
+  app2:
+    container_name: app2
+    build: app2/.
+    restart: on-failure
+    env_file: app2/.env
+    environment:
+      APP_NAME: app2
+    tty: true
+    stdin_open: true
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
