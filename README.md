@@ -24,7 +24,7 @@ In APP1 you can consume those messages and turn them back into PHP objects.
 docker exec -it app1 php bin/console messanger:consume -vv external_messages
 ```
 
-As an output you should see Messages issued by APP1.
+As an output you should see Messages issued by APP2.
 ```shell
 [warning] APP2: {STATUS_UPDATE} - Worker X assigned to Y
 [info] Message App\Message\StatusUpdate handled by App\Handler\StatusUpdateHandler::__invoke
